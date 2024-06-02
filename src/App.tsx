@@ -1,5 +1,13 @@
+import UserForm from './components/UserForm';
+import UserList from './components/UserList';
+
 const App = () => {
-  return <h1 className='bg-red flex text-2xl hover:text-3xl'>App works</h1>;
+  return (
+    <div>
+      <UserForm />
+      <UserList />
+    </div>
+  );
 };
 
 export default App;
