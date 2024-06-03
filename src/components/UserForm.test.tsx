@@ -8,6 +8,7 @@ describe('UserForm', () => {
     const header = screen.getByRole('heading');
     expect(header).toBeInTheDocument();
   });
+
   it('shows two inputs and a button', () => {
     render(<UserForm addUser={() => {}} />);
     const inputs = screen.getAllByRole('textbox');
