@@ -5,23 +5,21 @@ interface UserListProps {
 }
 
 const UserList = ({ users }: UserListProps) => {
-  console.log(users);
-
   return (
     <div className='mt-4 border-t pt-2'>
       <h1 className='text-poimandres-black mb-2 text-2xl font-bold'>List of Users</h1>
-      <table>
-        <thead>
+      <table className='w-full'>
+        <thead className='bg-poimandres-lightgrey text-poimandres-blackslate'>
           <tr>
-            <td>Name</td>
-            <td>Email</td>
+            <td className='border-r-4 border-poimandres-blackslate px-2 py-1 font-bold'>Name</td>
+            <td className='px-2 py-1 font-bold'>Email</td>
           </tr>
         </thead>
         <tbody>
           {users.map(({ id, name, email }) => (
             <tr key={id}>
-              <td>{name}</td>
-              <td>{email}</td>
+              <td className='p-2'>{name}</td>
+              <td className='p-2'>{email}</td>
             </tr>
           ))}
         </tbody>
