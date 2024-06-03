@@ -11,8 +11,8 @@ const UserList = ({ users }: UserListProps) => {
       <table className='w-full'>
         <thead className='bg-poimandres-lightgrey text-poimandres-blackslate'>
           <tr>
-            <td className='border-r-4 border-poimandres-blackslate px-2 py-1 font-bold'>Name</td>
-            <td className='px-2 py-1 font-bold'>Email</td>
+            <th className='border-r-4 border-poimandres-blackslate px-2 py-1 font-bold'>Name</th>
+            <th className='px-2 py-1 font-bold'>Email</th>
           </tr>
         </thead>
         <tbody>
