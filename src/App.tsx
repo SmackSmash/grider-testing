@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className='container mt-4 px-4'>
       <UserForm addUser={addUser} />
-      <UserList />
+      <UserList users={users} />
     </div>
   );
 };

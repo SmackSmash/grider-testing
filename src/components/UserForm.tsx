@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { nanoid } from 'nanoid';
 import { type User } from '../types';
 
 interface UserFormProps {
@@ -19,7 +20,7 @@ const UserForm = ({ addUser }: UserFormProps) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addUser({ name, email });
+    addUser({ id: nanoid(), name, email });
     setName('');
     setEmail('');
   };
