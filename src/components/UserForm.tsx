@@ -10,12 +10,12 @@ const UserForm = ({ addUser }: UserFormProps) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
-  const handleChangeName = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
+  const handleChangeName = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+    setName(value);
   };
 
-  const handleChangeEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
+  const handleChangeEmail = ({ target: { value } }: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
