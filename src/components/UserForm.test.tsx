@@ -6,8 +6,8 @@ describe('UserForm', () => {
   it('shows two inputs and a button', () => {
     render(<UserForm addUser={() => {}} />);
     const inputs = screen.getAllByRole('textbox');
-    const button = screen.getAllByRole('button');
-    expect(inputs.length).toBe(2);
-    expect(button.length).toBe(1);
+    const button = screen.getByRole('button');
+    expect(inputs).toHaveLength(2);
+    expect(button).toBeInTheDocument();
   });
 });
