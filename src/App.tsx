@@ -3,7 +3,7 @@ import UserList from './components/UserList';
 
 const App = () => {
   return (
-    <div>
+    <div className='container mt-4 px-4'>
       <UserForm />
       <UserList />
     </div>
