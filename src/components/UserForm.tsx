@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { type User } from '../types';
 
-const UserForm = (addUser: (user: User) => void) => {
+interface UserFormProps {
+  addUser: (user: User) => void;
+}
+
+const UserForm = ({ addUser }: UserFormProps) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
 
