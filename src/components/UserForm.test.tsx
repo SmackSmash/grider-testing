@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 import user from '@testing-library/user-event';
 import UserForm from './UserForm';
-import { type User } from '../types';
 
 describe('UserForm', () => {
   it('has a header', () => {
@@ -19,16 +19,16 @@ describe('UserForm', () => {
   });
 
   it('calls addUser when the form is submitted', async () => {
-    const argList: User[] = [];
-    const callback = (user: User) => {
-      argList.push(user);
-    };
-    render(<UserForm addUser={callback} />);
+    const mock = vi.fn();
+    render(<UserForm addUser={mock} />);
     const [name, email] = screen.getAllByRole('textbox');
     await user.type(name, 'Test name');
     await user.type(email, 'test@email.com');
     const button = screen.getByRole('button');
     await user.click(button);
-    expect(argList).toHaveLength(1);
+    expect(mock).toHaveBeenCalled();
+    expect(mock).toHaveBeenCalledWith(
+      expect.objectContaining({ name: 'Test name', email: 'test@email.com' })
+    );
   });
 });
