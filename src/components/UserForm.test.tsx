@@ -18,7 +18,7 @@ describe('UserForm', () => {
     expect(button).toBeInTheDocument();
   });
 
-  it('calls addUser when the form is submitted', async () => {
+  it('calls addUser with for data when the form is submitted', async () => {
     const mock = vi.fn();
     render(<UserForm addUser={mock} />);
     const [name, email] = screen.getAllByRole('textbox');
