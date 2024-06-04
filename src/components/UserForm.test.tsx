@@ -21,9 +21,10 @@ describe('UserForm', () => {
   it('calls addUser with for data when the form is submitted', async () => {
     const mock = vi.fn();
     render(<UserForm addUser={mock} />);
-    const [name, email] = screen.getAllByRole('textbox');
-    await user.type(name, 'Test name');
-    await user.type(email, 'test@email.com');
+    const nameInput = screen.getByLabelText('Name');
+    const emailInput = screen.getByLabelText('Email');
+    await user.type(nameInput, 'Test name');
+    await user.type(emailInput, 'test@email.com');
     const button = screen.getByRole('button');
     await user.click(button);
     expect(mock).toHaveBeenCalled();
